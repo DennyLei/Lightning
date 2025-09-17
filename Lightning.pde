@@ -1,7 +1,3 @@
-import gifAnimation.*;
-
-Gif myGif;
-
 int startX = 150;
 int startY = 0;
 int endX = 150;
@@ -12,14 +8,15 @@ int startY2 = 0;
 int endX2 = (int)(Math.random()*200);
 int endY2 = 0;
 
-int count = 2;
+int count = 5;
+PImage myImage;
 
 void setup() {
+  frameRate(200);
   size(300, 300);
   background(0);
   strokeWeight(3);
-  myGif = new Gif(this, "Shazam.gif");
-  myGif.loop();  // continuously loops the gif
+  myImage = loadImage("Shazam.png");
 }
 
 void draw() {
@@ -36,8 +33,11 @@ void draw() {
   startY = endY;
   startX2 = endX2;
   startY2 = endY2;
-  if (count >= 100) {
-    image(myGif, 0, 0, width, height);
+  if(count >=  100){
+     image(myImage, 0, 0, width, height);
+     textSize(77);
+     fill(252, 249, 42);
+     text("Shazam", 0, 100 , width, height);
   }
 }
 
